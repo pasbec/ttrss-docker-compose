@@ -57,12 +57,12 @@ services:
       - TTRSS_SMTP_SECURE=tls
       - TTRSS_SMTP_SKIP_CERT_CHECKS=false
       - TTRSS_LDAP_URI=ldap://dc.some.example.com # Mandatory
-      - TTRSS_LDAP_USE_TLS=true
-      - TTRSS_LDAP_BIND_DN=SOME\{login} # Mandatory
-      - TTRSS_LDAP_BIND_PW={password}
+      - TTRSS_LDAP_TLS=true
+      - TTRSS_LDAP_BIND_DN=SOME\%login # Mandatory
+      - TTRSS_LDAP_BIND_PW=%password
       - TTRSS_LDAP_BASE_DN=CN=Users,DC=some,DC=example,DC=com # Mandatory
-      - TTRSS_LDAP_ADMIN_FILTER=(&(objectClass=person)(memberOf:1.2.840.113556.1.4.1941:=CN=TinyTinyRSS-Admins,CN=Users,DC=some,DC=example,DC=com)(sAMAccountName={login}))
-      - TTRSS_LDAP_USER_FILTER=(&(objectClass=person)(memberOf:1.2.840.113556.1.4.1941:=CN=TinyTinyRSS-Users,CN=Users,DC=some,DC=example,DC=com)(sAMAccountName={login}))
+      - TTRSS_LDAP_ADMIN_FILTER=(&(objectClass=person)(memberOf:1.2.840.113556.1.4.1941:=CN=TinyTinyRSS-Admins,CN=Users,DC=some,DC=example,DC=com)(sAMAccountName=%login))
+      - TTRSS_LDAP_USER_FILTER=(&(objectClass=person)(memberOf:1.2.840.113556.1.4.1941:=CN=TinyTinyRSS-Users,CN=Users,DC=some,DC=example,DC=com)(sAMAccountName=%login))
       - TTRSS_LDAP_USER_ATTRIBUTE=sAMAccountName
       - TTRSS_LDAP_NAME_ATTRIBUTE=name
       - TTRSS_LDAP_MAIL_ATTRIBUTE=mail
