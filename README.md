@@ -29,5 +29,6 @@ docker compose run --rm --env ARCHIVE=backup.tar.gz restore
 ```sh
 docker compose pull --ignore-buildable
 docker compose build --no-cache --pull
+# docker volume rm ttrss_app
 docker compose up -d
 ```
