@@ -28,6 +28,6 @@ docker compose run --rm --env ARCHIVE=backup.tar.gz restore
 
 ```sh
 docker compose pull --ignore-buildable
-docker compose build --pull
+docker compose build --no-cache --pull
 docker compose up -d
 ```
